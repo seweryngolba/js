@@ -3,34 +3,17 @@
     <title>My Todo App</title>
   </head>
   <body>
-    <button>Press me</button>
+    <input type="text" id="todo-title" />
+    <button onclick="displayTitle()">Display Title</button>
     <script>
-      let todo1 = "Get groceries";
-      let todo2 = "Wash car";
-      let todo3 = "Make dinner";
+      function displayTitle() {
+        let textbox = document.getElementById("todo-title");
+        let title = textbox.value;
 
-      function addTodo(todoTitle) {
-        let element = document.createElement("div");
-        element.innerText = todoTitle;
-        document.body.appendChild(element);
+        let div = document.createElement("div");
+        div.innerText = title;
+        document.body.appendChild(div);
       }
-
-      function arrayDouble(stringArr) {
-        let result = [];
-
-        stringArr.forEach(function (str) {
-          result.push(str);
-          result.push(str);
-        });
-
-        console.log(result);
-      }
-
-      arrayDouble(["bark", "meow"]);
-
-      addTodo(todo1);
-      addTodo(todo2);
-      addTodo(todo3);
     </script>
   </body>
 </html>
